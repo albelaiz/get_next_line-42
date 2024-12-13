@@ -1,18 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albelaiz <albelaiz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/12 13:10:24 by albelaiz          #+#    #+#             */
+/*   Updated: 2024/12/12 15:09:34 by albelaiz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-char	*ft_strncpy(char *s1, char *s2, int len)
+char	*ft_strchr(const char *str, int c)
 {
-	int	j;
+	int	i;
 
-	j = 0;
-	while (s2[j] && len > 0)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		s1[j] = s2[j];
-		j++;
-		len--;
+		if (str[i] == (char)c)
+			return ((char *)str + i);
+		i++;
 	}
-	s1[j] = '\0';
-	return (s1);
+	if (str[i] == (char)c)
+		return ((char *)str + i);
+	return (0);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)

@@ -8,11 +8,10 @@ int main()
     char *line;
 
     fd = open("test.txt", O_RDONLY);
-    while(line){
     line = get_next_line(fd);
         printf("%s", line);
         free(line);
-    }
     close(fd);
+    // system("leaks , a.out");
     return (0);
 }
