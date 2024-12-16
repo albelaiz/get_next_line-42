@@ -91,7 +91,9 @@ char	*get_next_line(int fd)
 	static char	*copy[10240];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) == -1)
+	if (fd > 10240 || fd < 0)
+		return(NULL);
+	if (BUFFER_SIZE <= 0 || read(fd, 0, 0) == -1)
 		return (free(copy[fd]), copy[fd] = NULL, NULL);
 	copy[fd] = read_and_append(fd, copy[fd]);
 	if (!copy[fd])
