@@ -6,11 +6,11 @@
 /*   By: albelaiz <albelaiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 13:10:11 by albelaiz          #+#    #+#             */
-/*   Updated: 2024/12/13 19:49:10 by albelaiz         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:51:04 by albelaiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*read_and_append(int fd, char *copy)
 {
@@ -92,7 +92,7 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd > 10240 || fd < 0)
-		return(NULL);
+		return (NULL);
 	if (BUFFER_SIZE <= 0 || read(fd, 0, 0) == -1)
 		return (free(copy[fd]), copy[fd] = NULL, NULL);
 	copy[fd] = read_and_append(fd, copy[fd]);

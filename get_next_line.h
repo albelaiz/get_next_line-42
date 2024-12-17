@@ -6,7 +6,7 @@
 /*   By: albelaiz <albelaiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 15:08:38 by albelaiz          #+#    #+#             */
-/*   Updated: 2024/12/13 15:08:16 by albelaiz         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:52:01 by albelaiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ size_t	ft_strlen(const char *str);
 char	*ft_extract_line(char *str);
 char	*ft_strchr(const char *str, int c);
 char	*read_and_append(int fd, char *copy);
-void	*free_buffer(int bytes, char *buffer);
 char	*ft_strncpy(char *s1, char *s2, int len);
 char	*ft_strjoin(char const *s1, char const *s2);
 
